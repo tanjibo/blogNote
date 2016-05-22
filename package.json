@@ -1,0 +1,21 @@
+{
+    "name": "blogNote",
+    "version": "0.0.1",
+    "description": "个人学习笔记",
+    "keywords": [
+        ""
+    ],
+    "homepage": "http://JSLite.io",
+    "author": "tanjibo <1533954229@qq.com>",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "licenses": "MIT",
+    "idoc": {
+        "theme": "default",
+        "md": [
+            "index.md"
+        ]
+    }
+}
