@@ -32,25 +32,34 @@
             {
                 "后端": [
                     {
-                        "Yii2学习笔记": [
-                            "yii2学习笔记_0.md",
-                            "yii2学习笔记_1.md"
+                        "mysql": [
+                            "mysql.md"
                         ]
+                    },
+                    {
+                        "php": []
                     }
                 ]
             },
             {
                 "工具": [
+                    "brew.md",
                     {
-                        "markdown": [
-                            "md语法.md"
+                        "composer": [
+                            "composer.md"
+                        ]
+                    },
+                    {
+                        "itom": [
+                            "itom快捷键.md"
                         ]
                     },
                     {
                         "markdown": [
                             "md语法.md"
                         ]
-                    }
+                    },
+                    "webStorm.md"
                 ]
             },
             {

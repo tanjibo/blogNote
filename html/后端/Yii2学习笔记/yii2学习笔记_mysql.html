@@ -35,28 +35,68 @@
 <div class="container">
 
     <div class="page-toc">
-        <ul><li><a href="#t0yii2 学习笔记_1">yii2 学习笔记_1</a></li><li><a href="#t1访问配置项数据">访问配置项数据</a></li><li><a href="#t2常用配置">常用配置</a></li></ul>
+        <ul><li><a href="#t0活动记录">活动记录</a></li></ul>
     </div>
     
     <div class="content markdown-body">
-        <h3 id="t0yii2 &#x5B66;&#x4E60;&#x7B14;&#x8BB0;_1">yii2 &#x5B66;&#x4E60;&#x7B14;&#x8BB0;_1 <a href="#t0yii2 &#x5B66;&#x4E60;&#x7B14;&#x8BB0;_1"> # </a></h3>
-<hr>
+        <h1 id="t0&#x6D3B;&#x52A8;&#x8BB0;&#x5F55;">&#x6D3B;&#x52A8;&#x8BB0;&#x5F55; <a href="#t0&#x6D3B;&#x52A8;&#x8BB0;&#x5F55;"> # </a></h1>
 <blockquote>
 <ul>
-<li>&#x6765;&#x51E0;&#x5F20;&#x7F8E;&#x5973;&#x56FE;&#x7247;&#xFF0C;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x4F60;&#x75B2;&#x52B3;&#xFF0C;&#x4F60;&#x770B;&#x6211;&#x662F;&#x591A;&#x4E48;&#x7684;&#x7EC6;&#x5FC3;&#xFF01;&#xFF01;&#xFF01;</li>
-<li>&#x6211;&#x8FD9;&#x6837;&#x7684;&#x597D;&#x7537;&#x4EBA;</li>
+<li>&#x67E5;&#x8BE2;&#x6570;&#x636E;</li>
 </ul>
 </blockquote>
-<p>  <img style="border:2px solid #dedede;background:white;padding:2px;width:100px;height:110px" src="https://github.com/tanjibo/blogNote/blob/gh-pages/Imgs/lu.jpg?raw=true">
-  <img style="border:2px solid #dedede;background:white;padding:2px;width:100px;height:110px" src="https://github.com/tanjibo/blogNote/blob/gh-pages/Imgs/lu2.jpg?raw=true">
-  <img style="border:2px solid #dedede;background:white;padding:2px;width:100px;height:110px" src="https://github.com/tanjibo/blogNote/blob/gh-pages/Imgs/lu1.jpg?raw=true">
-  <img style="border:2px solid #dedede;background:white;padding:2px;width:100px;height:110px" src="https://github.com/tanjibo/blogNote/blob/gh-pages/Imgs/lu2.jpg?raw=true"></p>
-<h3 id="t1&#x8BBF;&#x95EE;&#x914D;&#x7F6E;&#x9879;&#x6570;&#x636E;">&#x8BBF;&#x95EE;&#x914D;&#x7F6E;&#x9879;&#x6570;&#x636E; <a href="#t1&#x8BBF;&#x95EE;&#x914D;&#x7F6E;&#x9879;&#x6570;&#x636E;"> # </a></h3>
-<p><code>YII::$app-&gt;[&#x914D;&#x7F6E;&#x9879;&#x540D;&#x79F0;]  YII::$app-&gt;basic</code></p>
-<h3 id="t2&#x5E38;&#x7528;&#x914D;&#x7F6E;">&#x5E38;&#x7528;&#x914D;&#x7F6E; <a href="#t2&#x5E38;&#x7528;&#x914D;&#x7F6E;"> # </a></h3>
-<pre><code>charset
-defaultRoute
-layout
+<pre><code>//sql&#x8BED;&#x53E5;
+User::findBySql(&apos;select * from user where(id=1&apos;)&#xFF0D;&gt;asArray()-&gt;all();  
+
+//&#x5360;&#x4F4D;&#x7B26;&#x65B9;&#x5F0F; ,&#x9632;&#x6B62;sql &#x653B;&#x51FB;  `id=1 or 1=1`
+$sql=&quot;select * from test where id=:id&quot;;
+User::findBySql($sql,array(&apos;:id&apos;=&gt;&apos;1 or 1=1&apos;))-&gt;all();  
+
+User::find()-&gt;where([&apos;id&apos;=&gt;1])-&gt;all();
+
+[&apos;&gt;&apos;,&apos;id&apos;,0] //id &#x5927;&#x4E8E;0
+
+[&apos;between&apos;,&apos;id&apos;,1,2] // &#x5927;&#x4E8E;&#x7B49;&#x4E8E;1&#x4E14;&#x7B49;&#x4E8E;&#x5C0F;&#x4E8E;2
+
+[&apos;like&apos;,&apos;username&apos;,&apos;tanjibo&apos;] // username like %tanjibo%
+
+//&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x8F6C;&#x6362;&#x6210;&#x6570;&#x7EC4;
+asArray()
+
+//&#x6279;&#x91CF;&#x67E5;&#x8BE2;,batch() &#x82F1;&#x6587;&#x610F;&#x601D;&#xFF1A;&#x4E00;&#x6279;
+$tmp=array();
+foreach(User::find()-&gt;batch(2) as $test){
+  $tmp[]=$test;
+}
+</code></pre><blockquote>
+<ul>
+<li>&#x5220;&#x9664;    </li>
+</ul>
+</blockquote>
+<pre><code>User::deleteAll(&apos;id&gt;:id&apos;,array(&apos;:id&apos;=&gt;0));
+</code></pre><blockquote>
+<ul>
+<li>&#x63D2;&#x5165;&#x548C;&#x4FEE;&#x6539;</li>
+</ul>
+</blockquote>
+<pre><code>$user=new User;
+$user-&gt;validate();  //activeRecord &#x5B9A;&#x4E49;&#x4E86;rules &#x65B9;&#x6CD5;
+if(!$user-&gt;hasErrors()){
+  $user-&gt;save();
+}
+//&#x4FEE;&#x6539;&#x6570;&#x636E;
+$test=User::find()-&gt;where([&apos;id&apos;=&gt;4])-&gt;one();
+$test-&gt;username=&apos;tanjibo&apos;;
+$test-&gt;save();
+</code></pre><blockquote>
+<ul>
+<li>&#x5173;&#x8054;  </li>
+</ul>
+</blockquote>
+<pre><code>//hasMany
+hasMany(order::className(),[&apos;user_id&apos;=&gt;&apos;user_id&apos;])
+//hasOne
+hasOne(User::className(),[&apos;user_id&apos;]=&gt;&apos;user_id&apos;])
 </code></pre>
         <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
     </div>
