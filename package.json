@@ -37,6 +37,11 @@
                         ]
                     },
                     {
+                        "nodejs": [
+                            "nodejs.md"
+                        ]
+                    },
+                    {
                         "php": []
                     }
                 ]
@@ -49,6 +54,7 @@
                             "composer.md"
                         ]
                     },
+                    "emmet.md",
                     {
                         "itom": [
                             "itom快捷键.md"
