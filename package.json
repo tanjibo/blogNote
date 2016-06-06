@@ -32,6 +32,11 @@
             {
                 "后端": [
                     {
+                        "laravel": [
+                            "使用composer镜像安装laravel.md"
+                        ]
+                    },
+                    {
                         "mysql": [
                             "mysql.md"
                         ]
