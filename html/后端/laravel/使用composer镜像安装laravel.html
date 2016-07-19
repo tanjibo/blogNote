@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>blogNote</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                blogNote
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../../index.html">首页</a></li><li><a href="#"><span></span>前端</a><ul><li><a href="#"><span></span>jquery</a><ul><li><a href="../../../html/前端/jquery/jquery.validation.html">jquery.validation</a></li></ul></li><li><a href="#"><span></span>工具</a><ul><li><a href="../../../html/前端/工具/gulpjs.html">gulpjs</a></li></ul></li></ul></li><li><a href="#"><span></span>后端</a><ul><li><a href="#"><span></span>laravel</a><ul><li><a href="../../../html/后端/laravel/blade模板引擎.html">blade模板引擎</a></li><li><a href="../../../html/后端/laravel/middleware.html">middleware</a></li><li><a href="../../../html/后端/laravel/model常用方法.html">model常用方法</a></li><li class="active"><a href="../../../html/后端/laravel/使用composer镜像安装laravel.html">使用composer镜像安装laravel</a></li></ul></li><li><a href="#"><span></span>mysql</a><ul><li><a href="../../../html/后端/mysql/mysql.html">mysql</a></li></ul></li><li><a href="#"><span></span>ngnix</a><ul><li><a href="../../../html/后端/ngnix/1.html">1</a></li><li><a href="../../../html/后端/ngnix/ngnix安装.html">ngnix安装</a></li></ul></li><li><a href="#"><span></span>nodejs</a><ul><li><a href="../../../html/后端/nodejs/nodejs.html">nodejs</a></li></ul></li><li><a href="#"><span></span>php</a><ul><li><a href="../../../html/后端/php/获取服务器常用信息.html">获取服务器常用信息</a></li></ul></li></ul></li><li><a href="#"><span></span>工具</a><ul><li><a href="../../../html/工具/brew.html">brew</a></li><li><a href="#"><span></span>composer</a><ul><li><a href="../../../html/工具/composer/composer.html">composer</a></li></ul></li><li><a href="../../../html/工具/emmet.html">emmet</a></li><li><a href="#"><span></span>git</a><ul><li><a href="../../../html/工具/git/git.html">git</a></li></ul></li><li><a href="#"><span></span>itom</a><ul><li><a href="../../../html/工具/itom/itom快捷键.html">itom快捷键</a></li></ul></li><li><a href="#"><span></span>markdown</a><ul><li><a href="../../../html/工具/markdown/md语法.html">md语法</a></li></ul></li><li><a href="../../../html/工具/webStorm.html">webStorm</a></li></ul></li><li><a href="#"><span></span>服务器</a><ul><li><a href="../../../html/服务器/cup.html">cup</a></li><li><a href="../../../html/服务器/linux命令.html">linux命令</a></li><li><a href="../../../html/服务器/redis.html">redis</a></li><li><a href="../../../html/服务器/vim.html">vim</a></li><li><a href="../../../html/服务器/环境变量.html">环境变量</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0composer create-project laravel/laravel blog --prefer-dist">composer create-project laravel/laravel blog --prefer-dist</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <p>   ###composer &#x5B89;&#x88C5;laravel
+&#x542F;&#x7528;&#x955C;&#x50CF;&#x670D;&#x52A1;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x4E24;&#x79CD;&#xFF1A;<br><strong>&#x7CFB;&#x7EDF;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF1A;</strong> &#x5373;&#x5C06;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x6DFB;&#x52A0;&#x5230; Composer &#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6587;&#x4EF6; <code>config.json</code> &#x4E2D;&#x3002;<br><strong>&#x5355;&#x4E2A;&#x9879;&#x76EE;&#x914D;&#x7F6E;&#xFF1A;</strong> &#x5C06;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x6DFB;&#x52A0;&#x5230;&#x67D0;&#x4E2A;&#x9879;&#x76EE;&#x7684; <code>composer.json</code> &#x6587;&#x4EF6;&#x4E2D;<br><strong>&#x4F8B;1&#xFF1A;&#x4FEE;&#x6539; composer &#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF08;&#x63A8;&#x8350;&#x65B9;&#x5F0F;&#xFF09;</strong>  </p>
+<blockquote>
+<p>&#x6253;&#x5F00;&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#xFF08;windows&#x7528;&#x6237;&#xFF09;&#x6216;&#x63A7;&#x5236;&#x53F0;&#xFF08;Linux&#x3001;Mac &#x7528;&#x6237;&#xFF09;&#x5E76;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;<br><code>composer config -g repo.packagist composer https://packagist.phpcomposer.com</code></p>
+</blockquote>
+<p><strong>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; blog &#x7684; Laravel &#x9879;&#x76EE;</strong>  </p>
+<h2 id="t0composer create-project laravel/laravel blog --prefer-dist">composer create-project laravel/laravel blog --prefer-dist <a href="#t0composer create-project laravel/laravel blog --prefer-dist"> # </a></h2>
+<p><strong>&#x4F8B;2&#xFF1A;&#x4FEE;&#x6539;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x7684; composer.json &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;</strong>  </p>
+<blockquote>
+<p>&#x6253;&#x5F00;&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#xFF08;windows&#x7528;&#x6237;&#xFF09;&#x6216;&#x63A7;&#x5236;&#x53F0;&#xFF08;Linux&#x3001;Mac &#x7528;&#x6237;&#xFF09;&#xFF0C;&#x8FDB;&#x5165;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x7684;&#x6839;&#x76EE;&#x5F55;&#xFF08;&#x4E5F;&#x5C31;&#x662F;<code>composer.json</code> &#x6587;&#x4EF6;&#x6240;&#x5728;&#x76EE;&#x5F55;&#xFF09;&#xFF0C;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;<br><code>composer config -g repo.packagist composer https://packagist.phpcomposer.com</code>   </p>
+</blockquote>
+<p>&#x4E0A;&#x8FF0;&#x547D;&#x4EE4;&#x5C06;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x4E2D;&#x7684; <code>composer.json</code>&#x6587;&#x4EF6;&#x7684;&#x672B;&#x5C3E;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x955C;&#x50CF;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF08;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x624B;&#x5DE5;&#x6DFB;&#x52A0;&#xFF09;&#xFF1A;</p>
+<pre><code>&quot;repositories&quot;: {
+   &quot;packagist&quot;: {
+    &quot;type&quot;: &quot;composer&quot;,
+    &quot;url&quot;: &quot;https://packagist.phpcomposer.com&quot;
+   }
+}
+</code></pre><p>&#x4EE5; laravel &#x9879;&#x76EE;&#x7684; composer.json &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;&#x4F8B;&#xFF0C;&#x6267;&#x884C;&#x4E0A;&#x8FF0;&#x547D;&#x4EE4;&#x540E;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF08;&#x6CE8;&#x610F;&#x6700;&#x540E;&#x51E0;&#x884C;&#xFF09;&#xFF1A;</p>
+<pre><code>{
+    &quot;name&quot;: &quot;laravel/laravel&quot;,
+    &quot;description&quot;: &quot;The Laravel Framework.&quot;,
+    &quot;keywords&quot;: [
+        &quot;framework&quot;,
+        &quot;laravel&quot;
+    ],
+    &quot;license&quot;: &quot;MIT&quot;,
+    &quot;type&quot;: &quot;project&quot;,
+    &quot;require&quot;: {
+        &quot;php&quot;: &quot;&gt;=5.5.9&quot;,
+        &quot;laravel/framework&quot;: &quot;5.2.*&quot;
+    },
+    &quot;require-dev&quot;: {
+        &quot;fzaninotto/faker&quot;: &quot;~1.4&quot;,
+        &quot;mockery/mockery&quot;: &quot;0.9.*&quot;,
+        &quot;phpunit/phpunit&quot;: &quot;~4.0&quot;,
+        &quot;symfony/css-selector&quot;: &quot;2.8.*|3.0.*&quot;,
+        &quot;symfony/dom-crawler&quot;: &quot;2.8.*|3.0.*&quot;
+    },
+    &quot;autoload&quot;: {
+        &quot;classmap&quot;: [
+            &quot;database&quot;
+        ],
+        &quot;psr-4&quot;: {
+            &quot;App\\&quot;: &quot;app/&quot;
+        }
+    },
+    &quot;autoload-dev&quot;: {
+        &quot;classmap&quot;: [
+            &quot;tests/TestCase.php&quot;
+        ]
+    },
+    &quot;scripts&quot;: {
+        &quot;post-root-package-install&quot;: [
+            &quot;php -r \&quot;copy(&apos;.env.example&apos;, &apos;.env&apos;);\&quot;&quot;
+        ],
+        &quot;post-create-project-cmd&quot;: [
+            &quot;php artisan key:generate&quot;
+        ],
+        &quot;post-install-cmd&quot;: [
+            &quot;php artisan clear-compiled&quot;,
+            &quot;php artisan optimize&quot;
+        ],
+        &quot;pre-update-cmd&quot;: [
+            &quot;php artisan clear-compiled&quot;
+        ],
+        &quot;post-update-cmd&quot;: [
+            &quot;php artisan optimize&quot;
+        ]
+    },
+    &quot;config&quot;: {
+        &quot;preferred-install&quot;: &quot;dist&quot;
+    },
+    &quot;repositories&quot;: {
+        &quot;packagist&quot;: {
+            &quot;type&quot;: &quot;composer&quot;,
+            &quot;url&quot;: &quot;https://packagist.phpcomposer.com&quot;
+        }
+    }
+}
+</code></pre><p>OK&#xFF0C;&#x4E00;&#x5207;&#x641E;&#x5B9A;&#xFF01;&#x8BD5;&#x4E00;&#x4E0B; composer install &#x6765;&#x4F53;&#x9A8C;&#x98DE;&#x4E00;&#x822C;&#x7684;&#x901F;&#x5EA6;&#x5427;&#xFF01;</p>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

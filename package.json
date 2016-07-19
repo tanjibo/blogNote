@@ -1,7 +1,7 @@
 {
     "name": "blogNote",
     "version": "0.0.1",
-    "description": "个人学习笔记",
+    "description": "",
     "keywords": [
         ""
     ],
@@ -15,18 +15,89 @@
     "idoc": {
         "theme": "default",
         "md": [
-            "index.md",
+            "首页.md",
             {
-                "前端": []
+                "前端": [
+                    {
+                        "jquery": [
+                            "jquery.validation.md"
+                        ]
+                    },
+                    {
+                        "工具": [
+                            "gulpjs.md"
+                        ]
+                    }
+                ]
             },
             {
-                "后端": []
+                "后端": [
+                    {
+                        "laravel": [
+                            "blade模板引擎.md",
+                            "middleware.md",
+                            "model常用方法.md",
+                            "使用composer镜像安装laravel.md"
+                        ]
+                    },
+                    {
+                        "mysql": [
+                            "mysql.md"
+                        ]
+                    },
+                    {
+                        "ngnix": [
+                            "1.md",
+                            "ngnix安装.md"
+                        ]
+                    },
+                    {
+                        "nodejs": [
+                            "nodejs.md"
+                        ]
+                    },
+                    {
+                        "php": [
+                            "获取服务器常用信息.md"
+                        ]
+                    }
+                ]
             },
             {
-                "服务器": []
+                "工具": [
+                    "brew.md",
+                    {
+                        "composer": [
+                            "composer.md"
+                        ]
+                    },
+                    "emmet.md",
+                    {
+                        "git": [
+                            "git.md"
+                        ]
+                    },
+                    {
+                        "itom": [
+                            "itom快捷键.md"
+                        ]
+                    },
+                    {
+                        "markdown": [
+                            "md语法.md"
+                        ]
+                    },
+                    "webStorm.md"
+                ]
             },
             {
-                "首页": []
+                "服务器": [
+                    "cup.md",
+                    "linux命令.md",
+                    "redis.md",
+                    "vim.md",
+                    "环境变量.md"
+                ]
             }
         ]
     }

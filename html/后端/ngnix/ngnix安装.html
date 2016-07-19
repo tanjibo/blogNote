@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>blogNote</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                blogNote
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../../index.html">首页</a></li><li><a href="#"><span></span>前端</a><ul><li><a href="#"><span></span>jquery</a><ul><li><a href="../../../html/前端/jquery/jquery.validation.html">jquery.validation</a></li></ul></li><li><a href="#"><span></span>工具</a><ul><li><a href="../../../html/前端/工具/gulpjs.html">gulpjs</a></li></ul></li></ul></li><li><a href="#"><span></span>后端</a><ul><li><a href="#"><span></span>laravel</a><ul><li><a href="../../../html/后端/laravel/blade模板引擎.html">blade模板引擎</a></li><li><a href="../../../html/后端/laravel/middleware.html">middleware</a></li><li><a href="../../../html/后端/laravel/model常用方法.html">model常用方法</a></li><li><a href="../../../html/后端/laravel/使用composer镜像安装laravel.html">使用composer镜像安装laravel</a></li></ul></li><li><a href="#"><span></span>mysql</a><ul><li><a href="../../../html/后端/mysql/mysql.html">mysql</a></li></ul></li><li><a href="#"><span></span>ngnix</a><ul><li><a href="../../../html/后端/ngnix/1.html">1</a></li><li class="active"><a href="../../../html/后端/ngnix/ngnix安装.html">ngnix安装</a></li></ul></li><li><a href="#"><span></span>nodejs</a><ul><li><a href="../../../html/后端/nodejs/nodejs.html">nodejs</a></li></ul></li><li><a href="#"><span></span>php</a><ul><li><a href="../../../html/后端/php/获取服务器常用信息.html">获取服务器常用信息</a></li></ul></li></ul></li><li><a href="#"><span></span>工具</a><ul><li><a href="../../../html/工具/brew.html">brew</a></li><li><a href="#"><span></span>composer</a><ul><li><a href="../../../html/工具/composer/composer.html">composer</a></li></ul></li><li><a href="../../../html/工具/emmet.html">emmet</a></li><li><a href="#"><span></span>git</a><ul><li><a href="../../../html/工具/git/git.html">git</a></li></ul></li><li><a href="#"><span></span>itom</a><ul><li><a href="../../../html/工具/itom/itom快捷键.html">itom快捷键</a></li></ul></li><li><a href="#"><span></span>markdown</a><ul><li><a href="../../../html/工具/markdown/md语法.html">md语法</a></li></ul></li><li><a href="../../../html/工具/webStorm.html">webStorm</a></li></ul></li><li><a href="#"><span></span>服务器</a><ul><li><a href="../../../html/服务器/cup.html">cup</a></li><li><a href="../../../html/服务器/linux命令.html">linux命令</a></li><li><a href="../../../html/服务器/redis.html">redis</a></li><li><a href="../../../html/服务器/vim.html">vim</a></li><li><a href="../../../html/服务器/环境变量.html">环境变量</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0ngnix 安装">ngnix 安装</a><ul><li><a href="#t1官网:(http://nginx.org)">官网:(http://nginx.org)</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h3 id="t0ngnix &#x5B89;&#x88C5;">ngnix &#x5B89;&#x88C5; <a href="#t0ngnix &#x5B89;&#x88C5;"> # </a></h3>
+<h5 id="t1&#x5B98;&#x7F51;:(http://nginx.org)">&#x5B98;&#x7F51;:(http://nginx.org) <a href="#t1&#x5B98;&#x7F51;:(http://nginx.org)"> # </a></h5>
+<hr>
+<p><strong>1.&#x9996;&#x5148;&#x786E;&#x8BA4;&#x662F;&#x4E0D;&#x662F;&#x6709;&#x5B89;&#x88C5;&#x7F16;&#x8BD1;&#x5305;&#x548C;&#x4E00;&#x4E9B;&#x4F9D;&#x8D56;&#x5305;</strong></p>
+<pre><code>  yum -y install gcc gcc-c++ openssl openssl-devel zlib zlib-devel autoconfig automake pcre pcre-devel
+  pcre  &#x7528;&#x4E8E;rewrite &#x91CD;&#x5199;
+</code></pre><p><strong>2.&#x521B;&#x5EFA;&#x8FD0;&#x884C;ngnix &#x7684;&#x7528;&#x6237;</strong></p>
+<pre><code> groupadd www
+ useradd -M -s /sbin/nologin -g www www
+</code></pre><p><strong>3.&#x4E0B;&#x8F7D; &#x5B89;&#x88C5; ngnix</strong></p>
+<pre><code>  # wget http://ngnix.org/download/nginx-1.9.2.tar.gz
+  # tar zxvf nginx-1.9.2.tar.gz
+  # cd  nginx-1.9.2
+# ./configure --prefix=/usr/local/ngnix(&#x5B89;&#x88C5;&#x76EE;&#x5F55;)             --with-pcre --user=www --group=www --with-http_stub_status_module --with-http_ssl_module
+  # make &amp;&amp; make install
+</code></pre><p><strong>4.&#x5173;&#x95ED;centos&#x9632;&#x706B;&#x5899;</strong></p>
+<pre><code> service iptables stop
+ chkconfig --level 35 iptables off (&#x6C38;&#x4E45;&#x5173;&#x95ED;)
+</code></pre><p>5.&#x542F;&#x52A8;ngnix</p>
+<pre><code> &#x68C0;&#x67E5;nginx&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8BED;&#x6CD5;&#x6709;&#x6CA1;&#x6709;&#x95EE;&#x9898;
+ # /usr/local/nginx/sbin/nginx -t
+ &#x542F;&#x52A8;
+ # /usr/local/nginx/sbin/nginx
+ &#x91CD;&#x542F;
+ # /usr/local/nginx/sbin/nginx -s reload
+ &#x5B8C;&#x7F8E;&#x505C;&#x6B62;
+ # kill -QUIT `cat /var/run/nginx.pid`
+ &#x5FEB;&#x901F;&#x505C;&#x6B62;
+ kill -TERM`cat /var/run/nginx.pid`
+ &#x6216;&#x8005;
+ kill -INT`cat /var/run/nginx.pid`
+ &#x5B8C;&#x7F8E;&#x505C;&#x6B62;&#x5DE5;&#x4F5C;&#x8FDB;&#x7A0B;
+ kill -WINCH `cat /var/run/nginx.pid`
+
+ &#x5E73;&#x6ED1;&#x542F;&#x52A8;
+ kill -HUP `cat /var/run/nginx.pid`
+  &#x5F3A;&#x5236;&#x505C;&#x6B62;
+ pkill -9 nginx
+ #
+</code></pre><p>##&#x5E38;&#x7528;&#x547D;&#x4EE4;</p>
+<pre><code> /usr/local/nginx/sbin/nginx -v &#x67E5;&#x770B;&#x7248;&#x672C;
+ /usr/local/nginx/sbin/nginx -V  &#x67E5;&#x770B;&#x7F16;&#x8BD1;&#x7684;&#x53C2;&#x6570;&#x548C;&#x6A21;&#x5757;
+</code></pre>
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
