@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>blogNote</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                blogNote
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../../index.html">首页</a></li><li><a href="#"><span></span>前端</a><ul><li><a href="#"><span></span>jquery</a><ul><li class="active"><a href="../../../html/前端/jquery/jquery.validation.html">jquery.validation</a></li></ul></li><li><a href="#"><span></span>工具</a><ul><li><a href="../../../html/前端/工具/gulpjs.html">gulpjs</a></li></ul></li></ul></li><li><a href="#"><span></span>后端</a><ul><li><a href="#"><span></span>laravel</a><ul><li><a href="../../../html/后端/laravel/blade模板引擎.html">blade模板引擎</a></li><li><a href="../../../html/后端/laravel/middleware.html">middleware</a></li><li><a href="../../../html/后端/laravel/model常用方法.html">model常用方法</a></li><li><a href="../../../html/后端/laravel/使用composer镜像安装laravel.html">使用composer镜像安装laravel</a></li></ul></li><li><a href="#"><span></span>mysql</a><ul><li><a href="../../../html/后端/mysql/mysql.html">mysql</a></li></ul></li><li><a href="#"><span></span>ngnix</a><ul><li><a href="../../../html/后端/ngnix/1.html">1</a></li><li><a href="../../../html/后端/ngnix/ngnix安装.html">ngnix安装</a></li></ul></li><li><a href="#"><span></span>nodejs</a><ul><li><a href="../../../html/后端/nodejs/nodejs.html">nodejs</a></li></ul></li><li><a href="#"><span></span>php</a><ul><li><a href="../../../html/后端/php/获取服务器常用信息.html">获取服务器常用信息</a></li></ul></li></ul></li><li><a href="#"><span></span>工具</a><ul><li><a href="../../../html/工具/brew.html">brew</a></li><li><a href="#"><span></span>composer</a><ul><li><a href="../../../html/工具/composer/composer.html">composer</a></li></ul></li><li><a href="../../../html/工具/emmet.html">emmet</a></li><li><a href="#"><span></span>git</a><ul><li><a href="../../../html/工具/git/git.html">git</a></li></ul></li><li><a href="#"><span></span>itom</a><ul><li><a href="../../../html/工具/itom/itom快捷键.html">itom快捷键</a></li></ul></li><li><a href="#"><span></span>markdown</a><ul><li><a href="../../../html/工具/markdown/md语法.html">md语法</a></li></ul></li><li><a href="../../../html/工具/webStorm.html">webStorm</a></li></ul></li><li><a href="#"><span></span>服务器</a><ul><li><a href="../../../html/服务器/cup.html">cup</a></li><li><a href="../../../html/服务器/linux命令.html">linux命令</a></li><li><a href="../../../html/服务器/redis.html">redis</a></li><li><a href="../../../html/服务器/vim.html">vim</a></li><li><a href="../../../html/服务器/环境变量.html">环境变量</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0s#  jquery.validation">s#  jquery.validation</a></li><li><a href="#t1高级api">高级api</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h2 id="t0s#  jquery.validation">s#  jquery.validation <a href="#t0s#  jquery.validation"> # </a></h2>
+<ul>
+<li><p><strong>github&#x7F51;&#x5740;:<a href="https://github.com/jzaefferer/jquery-validation">https://github.com/jzaefferer/jquery-validation</a></strong></p>
+</li>
+<li><p><strong>&#x57FA;&#x672C;&#x7528;&#x6CD5;</strong></p>
+<ul>
+<li><code>required</code>     &#x5FC5;&#x586B;</li>
+<li><code>remote</code>       &#x8FDC;&#x7A0B;&#x6821;&#x9A8C;</li>
+<li><code>minlength</code>    &#x6700;&#x5C0F;&#x957F;&#x5EA6;</li>
+<li><code>maxlength</code>    &#x6700;&#x5927;&#x957F;&#x5EA6;</li>
+<li><code>rangelength</code>  &#x662F;minlength &#x548C; maxlength &#x7684;&#x4E00;&#x4E2A;&#x96C6;&#x5408;</li>
+<li><code>min</code>          &#x6570;&#x5B57;&#x7684;&#x8303;&#x56F4;[&#x6700;&#x5C0F;&#x503C;]</li>
+<li><code>max</code>          &#x6570;&#x5B57;&#x7684;&#x8303;&#x56F4;[&#x6700;&#x5927;&#x503C;]</li>
+<li><code>range</code>        &#x662F;min &#x548C; max &#x7684;&#x4E00;&#x4E2A;&#x96C6;&#x5408;</li>
+<li><code>email</code>        email</li>
+<li><code>url</code>          &#x5730;&#x5740;</li>
+<li><code>date</code>         &#x65E5;&#x671F;</li>
+<li><code>number</code>       &#x6570;&#x5B57;</li>
+<li><code>digits</code>       &#x6574;&#x6570;</li>
+<li><code>equalTo</code>      &#x4E0E;&#x53E6;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x76F8;&#x7B49;</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&#x5B9E;&#x4F8B;&#xFF1A;
+<code>``
+$( &quot;#signupForm1&quot; ).validate( {
+    debug:true
+    rules: {
+        firstname1: &quot;required&quot;,
+        lastname1: &quot;required&quot;,
+        username1: {
+            required: true,
+            minlength: 2,
+            equalTo: &quot;#password1&quot;,
+            maxlength:20,
+            email:true,
+            rangelength:[2,20]
+            remote:{
+                url:&apos;data.json&apos;,
+                data:{
+                    id:1
+                }
+            }
+        },
+        num:{
+            required:true,
+            max:10,
+            min:2,
+            range:[2,10]
+        }
+    },
+    messages: {
+        firstname1: &quot;Please enter your firstname&quot;,
+        lastname1: &quot;Please enter your lastname&quot;,
+        username1: {
+            required: &quot;Please enter a username&quot;,
+            minlength: &quot;Your username must consist of at least 2 characters&quot;
+        },
+        password1: {
+            required: &quot;Please provide a password&quot;,
+            minlength: &quot;Your password must be at least 5 characters long&quot;
+        },
+        confirm_password1: {
+            required: &quot;Please provide a password&quot;,
+            minlength: &quot;Your password must be at least 5 characters long&quot;,
+            equalTo: &quot;Please enter the same password as above&quot;
+        },
+        email1: &quot;Please enter a valid email address&quot;,
+        agree1: &quot;Please accept our policy&quot;
+    },
+    errorElement: &quot;em&quot;,
+    errorPlacement: function ( error, element ) {
+        // Add the</code>help-block` class to the error element
+        error.addClass( &quot;help-block&quot; );</p>
+</blockquote>
+<pre><code>    // Add `has-feedback` class to the parent div.form-group
+    // in order to add icons to inputs
+    element.parents( &quot;.col-sm-5&quot; ).addClass( &quot;has-feedback&quot; );
+
+    if ( element.prop( &quot;type&quot; ) === &quot;checkbox&quot; ) {
+        error.insertAfter( element.parent( &quot;label&quot; ) );
+    } else {
+        error.insertAfter( element );
+    }
+
+    // Add the span element, if doesn&apos;t exists, and apply the icon classes to it.
+    if ( !element.next( &quot;span&quot; )[ 0 ] ) {
+        $( &quot;&lt;span class=&apos;glyphicon glyphicon-remove form-control-feedback&apos;&gt;&lt;/span&gt;&quot; ).insertAfter( element );
+    }
+},
+success: function ( label, element ) {
+    // Add the span element, if doesn&apos;t exists, and apply the icon classes to it.
+    if ( !$( element ).next( &quot;span&quot; )[ 0 ] ) {
+        $( &quot;&lt;span class=&apos;glyphicon glyphicon-ok form-control-feedback&apos;&gt;&lt;/span&gt;&quot; ).insertAfter( $( element ) );
+    }
+},
+highlight: function ( element, errorClass, validClass ) {
+    $( element ).parents( &quot;.col-sm-5&quot; ).addClass( &quot;has-error&quot; ).removeClass( &quot;has-success&quot; );
+    $( element ).next( &quot;span&quot; ).addClass( &quot;glyphicon-remove&quot; ).removeClass( &quot;glyphicon-ok&quot; );
+},
+unhighlight: function ( element, errorClass, validClass ) {
+    $( element ).parents( &quot;.col-sm-5&quot; ).addClass( &quot;has-success&quot; ).removeClass( &quot;has-error&quot; );
+    $( element ).next( &quot;span&quot; ).addClass( &quot;glyphicon-ok&quot; ).removeClass( &quot;glyphicon-remove&quot; );
+}
+</code></pre><p>} );
+} );
+```</p>
+<h2 id="t1&#x9AD8;&#x7EA7;api">&#x9AD8;&#x7EA7;api <a href="#t1&#x9AD8;&#x7EA7;api"> # </a></h2>
+<ul>
+<li><p><strong>rules()&#x65B9;&#x6CD5;(&#x53EA;&#x9488;&#x5BF9;&#x8868;&#x5355;&#x91CC;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x67D0;&#x4E2A;&#x6574;&#x4E2A;&#x8868;&#x5355;)</strong></p>
+<p> 1.&#x53EF;&#x4EE5;&#x4F7F;&#x7528;rules(&quot;add&quot;,{})&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x4E3A;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x89C4;&#x5219;&#xFF0C;&#x5982;</p>
+<p>  <code>$(&quot;#username&quot;).rules(&quot;add&quot;,{minlength:2,maxlength:10})</code>  </p>
+<p> 2.&#x53EF;&#x4EE5;&#x4F7F;&#x7528;rules(&quot;remove&quot;,{})&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x4E3A;&#x5143;&#x7D20;&#x53BB;&#x6389;&#x89C4;&#x5219;&#xFF0C;&#x5982;</p>
+<p>  <code>$(&quot;#username&quot;).rules(&quot;remove&quot;,&quot;email&quot;)</code></p>
+</li>
+<li><p><strong>validator</strong></p>
+<ul>
+<li><img src="http://img.mukewang.com/5756c88100014aad12800720.jpg" alt="tupian"></li>
+<li><code>validator.form()</code> //&#x6574;&#x4E2A;&#x8868;&#x5355;&#x662F;&#x5426;&#x6709;&#x6548; true/false</li>
+<li>validator.element(&quot;username&quot;) //&#x9A8C;&#x8BC1;&#x5143;&#x7D20;&#x662F;&#x5426;&#x6709;&#x6548;</li>
+<li>validator.resetFrom() //&#x8868;&#x5355;&#x56DE;&#x590D;&#x5230;&#x9A8C;&#x8BC1;&#x524D;&#x72B6;&#x6001;</li>
+<li>validator.showErrors({}) //&#x9488;&#x5BF9;&#x67D0;&#x4E2A;&#x5143;&#x7D20;&#x663E;&#x793A;&#x7279;&#x5B9A;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</li>
+<li>validator.numberOfInvalids() &#x8FD4;&#x56DE;&#x65E0;&#x6548;&#x5143;&#x7D20;&#x6570;&#x91CF;</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><img src="http://img.mukewang.com/575bd2e000018d0012800720.jpg" alt="tupian">  </li>
+</ul>
+<ul>
+<li><img src="http://img.mukewang.com/574bf02500010dae12800720.jpg" alt="tupian"></li>
+</ul>
+<ul>
+<li><p><img src="http://img.mukewang.com/573044c1000171fe12800720.jpg" alt="tupian">  </p>
+</li>
+<li><p><img src="http://img.mukewang.com/5756cc83000122ec12800720.jpg" alt="tupian">  </p>
+</li>
+</ul>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

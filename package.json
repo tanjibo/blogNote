@@ -19,12 +19,13 @@
             {
                 "前端": [
                     {
-                        "css3": [
-                            {
-                                "less": [
-                                    "less纪录.md"
-                                ]
-                            }
+                        "jquery": [
+                            "jquery.validation.md"
+                        ]
+                    },
+                    {
+                        "工具": [
+                            "gulpjs.md"
                         ]
                     }
                 ]
@@ -33,6 +34,9 @@
                 "后端": [
                     {
                         "laravel": [
+                            "blade模板引擎.md",
+                            "middleware.md",
+                            "model常用方法.md",
                             "使用composer镜像安装laravel.md"
                         ]
                     },
@@ -42,12 +46,20 @@
                         ]
                     },
                     {
+                        "ngnix": [
+                            "1.md",
+                            "ngnix安装.md"
+                        ]
+                    },
+                    {
                         "nodejs": [
                             "nodejs.md"
                         ]
                     },
                     {
-                        "php": []
+                        "php": [
+                            "获取服务器常用信息.md"
+                        ]
                     }
                 ]
             },
@@ -60,6 +72,11 @@
                         ]
                     },
                     "emmet.md",
+                    {
+                        "git": [
+                            "git.md"
+                        ]
+                    },
                     {
                         "itom": [
                             "itom快捷键.md"
@@ -74,7 +91,13 @@
                 ]
             },
             {
-                "服务器": []
+                "服务器": [
+                    "cup.md",
+                    "linux命令.md",
+                    "redis.md",
+                    "vim.md",
+                    "环境变量.md"
+                ]
             }
         ]
     }
